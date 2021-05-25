@@ -18,7 +18,7 @@
     "@angular/platform-browser": "~12.0.1",
     "@angular/platform-browser-dynamic": "~12.0.1",
     "@angular/router": "~12.0.1",
-    "@ngxs/async-storage-plugin": "file:../../../Documents/web/ngxs-store/@ngxs/async-storage-plugin",
+    "@ngxs/async-storage-plugin": "file:../ngxs-store/@ngxs/async-storage-plugin",
     "@ngxs/devtools-plugin": "^3.7.2",
     "@ngxs/logger-plugin": "^3.7.2",
     "@ngxs/store": "^3.7.2",
