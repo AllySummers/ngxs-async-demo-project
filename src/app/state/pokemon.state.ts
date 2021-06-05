@@ -1,13 +1,13 @@
 import { Action, Selector, State, StateContext } from "@ngxs/store";
-import { Injectable } from "../../../../../../Documents/web/ngxs-store/node_modules/@angular/core/core";
+import { Injectable } from "@angular/core";
 
 export class AddPokemon {
-  static readonly type = '[Pokemon] Add Animal';
+  static readonly type = '[Pokemon] Add Pokemon';
   constructor(public payload: string) { }
 }
 
 export class RemovePokemon {
-  static readonly type = '[Pokemon] Add Animal';
+  static readonly type = '[Pokemon] Remove Pokemon';
   constructor(public payload: string) { }
 }
 
@@ -32,7 +32,7 @@ export interface PokemonStateModel {
 }
 
 @State<PokemonStateModel>({
-  name: 'zoo',
+  name: 'pokemon',
   defaults: {
     pokemon: [],
     score: 0,
@@ -41,6 +41,26 @@ export interface PokemonStateModel {
 })
 @Injectable()
 export class PokemonState {
+  
+  @Selector()
+  static pokemon(state: PokemonStateModel) {
+    return state.pokemon
+  }
+
+  @Selector()
+  static deaths(state: PokemonStateModel) {
+    return state.deaths
+  }
+
+  @Selector()
+  static score(state: PokemonStateModel) {
+    return state.score
+  }
+
+  @Selector()
+  static state(state: PokemonStateModel) {
+    return state
+  }
 
   @Action(AddPokemon)
   addPokemon({ patchState, getState }: StateContext<PokemonStateModel>, action: AddPokemon) {

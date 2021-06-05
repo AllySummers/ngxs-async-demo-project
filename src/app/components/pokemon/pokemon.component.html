@@ -1,0 +1,37 @@
+<h3>Pokemon</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Remove</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="pokemon$ | async as pokemon">
+    <tr *ngFor="let poke of pokemon">
+      <td>{{ poke }}</td>
+      <td><button (click)="removePokemon(poke)">Remove</button></td>
+    </tr>
+  </tbody>
+</table>
+<label style="display: flex; flex-direction: column; margin-top: 1rem;">
+  <span>Add Pokemon</span>
+  <input [formControl]="pokemonControl" style="width: 10rem;">
+</label>
+<button (click)="addPokemon()">Add Pokemon</button>
+
+<hr>
+
+<h3>Score</h3>
+<span>{{ score$ | async }}</span>
+<label style="display: flex; flex-direction: column; margin-top: 1rem;">
+  <span>Add/Subtract Score</span>
+  <input [formControl]="scoreControl" style="width: 10rem;">
+</label>
+<button (click)="addScore()">Add Score</button>
+<button (click)="subtractScore()">Subtract Score</button>
+
+<hr>
+
+<h3>Deaths</h3>
+<span>{{ deaths$ | async }}</span>
+<button (click)="playerDied()">Add Death</button>

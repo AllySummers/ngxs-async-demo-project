@@ -1,5 +1,5 @@
 import { Action, Selector, State, StateContext } from "@ngxs/store";
-import { Injectable } from "../../../../../../Documents/web/ngxs-store/node_modules/@angular/core/core";
+import { Injectable } from "@angular/core";
 
 export class AddAnimal {
   static readonly type = '[Zoo] Add Animal';
@@ -7,7 +7,7 @@ export class AddAnimal {
 }
 
 export class RemoveAnimal {
-  static readonly type = '[Zoo] Add Animal';
+  static readonly type = '[Zoo] Remove Animal';
   constructor(public payload: string) { }
 }
 
@@ -43,5 +43,10 @@ export class ZooState {
   @Selector()
   static animals(state: ZooStateModel) {
     return state.animals
+  }
+
+  @Selector()
+  static state(state: ZooStateModel) {
+    return state
   }
 }

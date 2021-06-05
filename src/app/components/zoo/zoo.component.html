@@ -1,0 +1,20 @@
+<h3>Animals</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Remove</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="animals$ | async as animals">
+    <tr *ngFor="let animal of animals">
+      <td>{{ animal }}</td>
+      <td><button (click)="removeAnimal(animal)">Remove</button></td>
+    </tr>
+  </tbody>
+</table>
+<label style="display: flex; flex-direction: column; margin-top: 1rem;">
+  <span>Add Animal</span>
+  <input [formControl]="animalControl" style="width: 10rem;">
+</label>
+<button (click)="addAnimal()">Add Animal</button>
