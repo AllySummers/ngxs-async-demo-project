@@ -41,11 +41,7 @@ import { NgxsStoragePluginModule, StorageOption } from '@ngxs/storage-plugin';
           storage: AsyncEngineOption.SessionStorage
         }
       ]
-    }),
-    // NgxsStoragePluginModule.forRoot({ // Using the regular storage plugin loads from local storage, however mine does not
-    //   key: [ZooState, PokemonState],
-    //   storage: StorageOption.LocalStorage
-    // })
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
